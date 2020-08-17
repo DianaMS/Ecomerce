@@ -3,8 +3,23 @@
 {{ 1+ 2 }}
 {{ title }}
 
-<div *ngIf="title === 'angulard'">
-  este es un div
+<div *ngIf="title === 'angular'">
+  este es angular
+</div>
+
+<div *ngIf="title === 'react'">
+  este es react
+</div>
+
+<div *ngIf="title === 'view'">
+  este es view
+</div>
+
+<div [ngSwitch] = 'title'>
+  <p *ngSwitchCase="'angular'">este es angular</p>
+  <p *ngSwitchCase="'react'">este es react</p>
+  <p *ngSwitchCase="'view'">este es view</p>
+  <p *ngSwitchDefault>no hay match</p>
 </div>
 
 <button (click)='addItem()'>Add item</button>
